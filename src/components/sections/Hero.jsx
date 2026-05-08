@@ -19,7 +19,7 @@ const Hero = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-12 lg:py-8 min-h-[calc(100vh-120px)]">
             
             {/* Left Content */}
-            <div className="space-y-6 md:space-y-8">
+            <div className="space-y-6 md:space-y-8 px-8">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white/12 border border-white/25 text-white text-xs uppercase tracking-wider backdrop-blur-sm hover:bg-white/18 transition-colors duration-300" style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}>
                 <span className="w-2 h-2 rounded-full bg-white/80" style={{animation: 'pulse 2s ease-in-out infinite'}}></span>
@@ -58,13 +58,13 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <a 
                   href="/contact" 
-                  className="inline-flex items-center justify-center px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95 text-base"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 active:scale-95 text-base"
                 >
                   Request Access
                 </a>
                 <a 
                   href="/membership" 
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white/20 hover:bg-white/30 text-white font-semibold rounded-lg border border-white/40 transition-all duration-200 transform hover:scale-105 active:scale-95 text-base"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-white/20 hover:bg-white/30 text-white font-semibold rounded-xl border border-white/40 transition-all duration-200 transform hover:scale-105 active:scale-95 text-base"
                 >
                   Become a Member
                 </a>
