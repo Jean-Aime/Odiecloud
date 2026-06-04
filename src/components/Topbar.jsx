@@ -2,27 +2,40 @@ import { useState, useEffect } from 'react'
 
 const Topbar = () => {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+  const [screenSize, setScreenSize] = useState(window.innerWidth)
 
-  const messages = [
+  const desktopMessages = [
     "ODIECLOUD²π is now onboarding founding members across Africa, the Caribbean, and the global diaspora.",
     "Apply for ecosystem membership to access business, technology, trade, and investment opportunities.",
     "Developers, entrepreneurs, and strategic partners are invited to join the ODIECLOUD²π Tech Hub.",
     "Explore the Unified Marketplace connecting businesses, investors, and innovators."
   ]
 
-  const mobileMessages = [
+  const tabletMessages = [
     "Onboarding founding members across Africa and the Caribbean.",
     "Access business, tech, trade, and investment opportunities.",
     "Join ODIECLOUD²π Tech Hub for developers and entrepreneurs.",
     "Explore our Unified Marketplace today."
   ]
 
-  const displayMessages = isMobile ? mobileMessages : messages
+  const smallPhoneMessages = [
+    "Onboarding founders across Africa.",
+    "Access business, tech, and trade.",
+    "Join ODIECLOUD²π Tech Hub.",
+    "Explore our Marketplace."
+  ]
+
+  const getMessages = () => {
+    if (screenSize < 640) return smallPhoneMessages
+    if (screenSize < 768) return tabletMessages
+    return desktopMessages
+  }
+
+  const displayMessages = getMessages()
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
+      setScreenSize(window.innerWidth)
     }
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
